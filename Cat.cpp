@@ -5,7 +5,7 @@ Cat::Cat():type_("Cat"),cat_brain_(new Brain()){
     std::cout << "Cat default constructor" <<  std::endl;
 }
 
-Cat::Cat(Cat const & src): Animal(src), Brain(src){
+Cat::Cat(Cat const & src): type_(src.type_), cat_brain_(new Brain(*(src.cat_brain_))){
 
     std::cout << "Cat copy constructor called"  << std::endl;
 }
@@ -15,8 +15,9 @@ Cat & Cat::operator=(Cat const & rhs){
     std::cout << "Cat copy assignment operator called" << std::endl;
     if(this == &rhs)
         return(*this);
-    Animal::operator=(rhs);
-    Brain::operator=(rhs);
+    type_ = rhs.type_;
+    delete cat_brain_;
+    cat_brain_ = new Brain(*(rhs.cat_brain_));
     return(*this);
 }
 

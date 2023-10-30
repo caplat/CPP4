@@ -6,7 +6,7 @@ Dog::Dog():type_("Dog"),dog_brain_(new Brain()){
 
 }
 
-Dog::Dog(Dog const & src): Animal(src), Brain(src){
+Dog::Dog(Dog const & src): type_(src.type_), dog_brain_(new Brain(*(src.dog_brain_))){
 
     std::cout << "Dog copy constructor called"  << std::endl;
 }
@@ -17,8 +17,9 @@ Dog & Dog::operator=(Dog const & rhs){
 
     if(this == &rhs)
         return(*this);
-    Animal::operator=(rhs);
-    Brain::operator=(rhs);
+    type_ = rhs.type_;
+    delete dog_brain_;
+    dog_brain_ = new Brain(*(rhs.dog_brain_));
     return(*this);
 }
 
@@ -36,4 +37,9 @@ void Dog::makeSound()const{
 std::string Dog::getType()const{
 
     return type_;
+}
+
+Brain* Dog::getBrain(){
+
+    return dog_brain_;
 }

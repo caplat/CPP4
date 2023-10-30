@@ -3,7 +3,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal, public Brain{
+class Dog : public Animal{
 
 public:
 
@@ -14,6 +14,7 @@ public:
 
     void makeSound()const;
     std::string getType()const;
+    Brain* getBrain();
 
 private:
 
