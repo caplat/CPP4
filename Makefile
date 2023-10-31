@@ -1,12 +1,9 @@
-NAME = brain
+NAME = amateria
 
 SRCS = main.cpp \
-Animal.cpp \
-Dog.cpp \
-Cat.cpp \
-WrongAnimal.cpp \
-WrongCat.cpp \
-Brain.cpp \
+AMateria.cpp \
+Cure.cpp \
+Ice.cpp \
 
 CXX = c++
 
