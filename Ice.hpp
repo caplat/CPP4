@@ -10,7 +10,7 @@ public:
     Ice(Ice const & src);
     Ice& operator=(Ice const & rhs);
     virtual ~Ice();
-    virtual Ice* clone()const
+    virtual Ice* clone()const;
     void use(ICharacter& target);
 
 };

@@ -27,5 +27,5 @@ Cure* Cure::clone()const{
 
 void Cure::use(ICharacter& target){
 
-    std::cout << "*heals" << this->name_ << " 's wounds*"
+    std::cout << "*heals" << getName() << " 's wounds*"
 }
