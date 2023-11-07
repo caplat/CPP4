@@ -11,6 +11,9 @@ public:
     MateriaSource& operator=(MateriaSource const & rhs);
     ~MateriaSource();
 
+    void learnMateria(AMateria*);
+    AMateria* createMateria(std::string const & type);
+
 private:
 
     AMateria* grimoire[4];

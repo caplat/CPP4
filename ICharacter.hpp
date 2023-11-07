@@ -1,6 +1,8 @@
 #ifndef ICharacter_HPP
 # define ICharacter_HPP
-#include "MateriaSource.hpp"
+#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter{
 

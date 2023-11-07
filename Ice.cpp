@@ -8,7 +8,7 @@ Ice::Ice(Ice const & src): AMateria(src){
 
 }
 
-Ice & Ice::operator=(const & rhs){
+Ice & Ice::operator=(const Ice & rhs){
 
     if(this == &rhs)
         return(*this);
@@ -27,5 +27,5 @@ Ice* Ice::clone()const{
 
 void Ice::use(ICharacter& target){
 
-    std::cout << "*shoots an ice bolt at " << getName() << " *" << std::endl;
+    std::cout << "*shoots an ice bolt at " << target.getName() << "*" << std::endl;
 }

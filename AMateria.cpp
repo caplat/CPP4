@@ -1,6 +1,6 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria()type_("Unknown"){
+AMateria::AMateria(): type_("Unknown"){
 
 }
 
@@ -12,7 +12,7 @@ AMateria::AMateria(AMateria const & src): type_(src.type_){
 
 }
 
-AMateria & AMateria::operator=(const & rhs){
+AMateria & AMateria::operator=(const AMateria & rhs){
 
     if(this == &rhs)
         return(*this);
@@ -24,7 +24,7 @@ AMateria::~AMateria(){
 
 }
 
-std::string const AMateria::getType()const{
+std::string const & AMateria::getType()const{
 
     return type_;
 }

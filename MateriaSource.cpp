@@ -16,7 +16,7 @@ MateriaSource::MateriaSource(MateriaSource const & src){
     } 
 }
 
-MateriaSource& MateriaSource::operator=(MateriaSource const & rhs){
+MateriaSource& MateriaSource::operator=(const MateriaSource & rhs){
 
     if(this == &rhs)
         return(*this);
@@ -42,15 +42,17 @@ MateriaSource::~MateriaSource(){
 
 void MateriaSource::learnMateria(AMateria *spell){
 
-    for(int i = 0 , i < 4 ,i++){
-        if(grimoire[i] != NULL && spell != NULL)
+    for(int i = 0; i < 4; i++){
+        if(grimoire[i] == NULL){
             grimoire[i] = spell->clone();
+            break;
+        }
     }
 }
 
-void MateriaSource::createMateria(std::string const & type){
+AMateria* MateriaSource::createMateria(std::string const & type){
 
-    for(int i; i < 4 ; i++){
+    for(int i = 0; i < 4; i++){
         if(grimoire[i]->getType() == type)
             return grimoire[i]->clone();
     }
